@@ -1,0 +1,76 @@
+# ============================================================
+# Ecommerce Project — .gitignore
+# ============================================================
+
+# ============================================================
+# FRONTEND (React + Vite + Node)
+# ============================================================
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/coverage/
+frontend/*.local
+
+# ============================================================
+# BACKEND (Spring Boot + Maven)
+# ============================================================
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/.mvn/repository/
+backend/HELP.md
+backend/.env
+backend/application-local.yml
+backend/application-prod.yml
+backend/application-dev.yml
+backend/src/main/resources/application-secret.properties
+
+# ============================================================
+# IDEs & Editors
+# ============================================================
+.idea/
+*.iml
+*.iws
+.vscode/settings.json
+.vscode/.env
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ============================================================
+# Docker
+# ============================================================
+*.env
+docker-compose.override.yml
+
+# ============================================================
+# Logs
+# ============================================================
+*.log
+logs/
+backend/logs/
+
+# ============================================================
+# Testing
+# ============================================================
+frontend/test-results/
+frontend/playwright-report/
+backend/target/surefire-reports/
+
+# ============================================================
+# OS
+# ============================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini

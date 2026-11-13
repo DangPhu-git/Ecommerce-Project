@@ -1,0 +1,59 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [main]
+    paths: ['frontend/**']
+  pull_request:
+    paths: ['frontend/**']
+
+jobs:
+  lint-test-build:
+    name: Lint, Test & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+          cache-dependency-path: frontend/pnpm-lock.yaml
+
+      - name: Install dependencies
+        working-directory: ./frontend
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        working-directory: ./frontend
+        run: pnpm tsc --noEmit
+
+      - name: Lint
+        working-directory: ./frontend
+        run: pnpm eslint src/ --max-warnings 0
+
+      - name: Unit tests
+        working-directory: ./frontend
+        run: pnpm vitest run --reporter=verbose
+
+      - name: Build
+        working-directory: ./frontend
+        env:
+          VITE_API_URL: https://api.example.com
+          VITE_STRIPE_PUBLISHABLE_KEY: pk_test_placeholder
+        run: pnpm build
+
+      - name: Upload build artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v4
+        with:
+          name: frontend-dist
+          path: frontend/dist/
