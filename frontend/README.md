@@ -5,20 +5,20 @@ Xem chi tiết architecture: [`../../docs/02-frontend-architecture.md`](../../do
 ## Setup
 
 ```bash
-pnpm install
+npm install
 cp .env.example .env.local
-pnpm dev
+npm run dev
 ```
 
 ## Scripts
 
 ```bash
-pnpm dev        # Development server (http://localhost:5173)
-pnpm build      # Production build
-pnpm preview    # Preview production build
-pnpm tsc        # Type check
-pnpm lint       # ESLint
-pnpm test       # Vitest unit tests
+npm run dev       # Development server (http://localhost:5173)
+npm run build     # Production build
+npm run preview   # Preview production build
+npm run tsc       # Type check
+npm run lint      # ESLint
+npm test          # Vitest unit tests
 ```
 
 ## Environment Variables
@@ -28,3 +28,4 @@ pnpm test       # Vitest unit tests
 VITE_API_URL=http://localhost:8080
 VITE_STRIPE_PUBLISHABLE_KEY=pk_test_...
 ```
+

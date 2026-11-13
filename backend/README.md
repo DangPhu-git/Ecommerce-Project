@@ -51,3 +51,4 @@ src/main/resources/db/migration/
 ├── V1__init_schema.sql
 └── V2__...sql
 ```
+

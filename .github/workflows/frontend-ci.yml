@@ -16,40 +16,35 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Setup Node 20
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
-          cache-dependency-path: frontend/pnpm-lock.yaml
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Install dependencies
         working-directory: ./frontend
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Type check
         working-directory: ./frontend
-        run: pnpm tsc --noEmit
+        run: npm run tsc -- --noEmit
 
       - name: Lint
         working-directory: ./frontend
-        run: pnpm eslint src/ --max-warnings 0
+        run: npm run lint -- --max-warnings 0
 
       - name: Unit tests
         working-directory: ./frontend
-        run: pnpm vitest run --reporter=verbose
+        run: npm test -- --reporter=verbose
 
       - name: Build
         working-directory: ./frontend
         env:
           VITE_API_URL: https://api.example.com
           VITE_STRIPE_PUBLISHABLE_KEY: pk_test_placeholder
-        run: pnpm build
+        run: npm run build
 
       - name: Upload build artifact
         if: github.ref == 'refs/heads/main'

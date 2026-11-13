@@ -30,7 +30,7 @@ Ecommerce-Project/          ← Git root (đây là repo)
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Node.js 20+, pnpm 9+
+- Node.js 20+, npm 10+
 - Java 21 (JDK)
 - Maven 3.9+
 - Docker Desktop (cho local PostgreSQL)
@@ -38,10 +38,10 @@ Ecommerce-Project/          ← Git root (đây là repo)
 ### Frontend
 ```bash
 cd frontend
-pnpm install
+npm install
 cp .env.example .env.local
 # Điền VITE_API_URL và VITE_STRIPE_PUBLISHABLE_KEY
-pnpm dev
+npm run dev
 # → http://localhost:5173
 ```
 
@@ -100,3 +100,4 @@ Tài liệu kiến trúc đầy đủ ở `../docs/` (ngoài repo):
 | Backend API | http://localhost:8080/api/v1 |
 | Swagger UI | http://localhost:8080/swagger-ui.html |
 | Health Check | http://localhost:8080/actuator/health |
+
