@@ -1,0 +1,21 @@
+# Copy this file to application-dev.yml and fill in your local secrets
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ecommerce_dev
+    username: dev
+    password: dev
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+app:
+  jwt:
+    secret: your-super-secret-jwt-key-min-32-chars-long-here
+  cors:
+    allowed-origins: http://localhost:5173
+
+stripe:
+  api-key: sk_test_your_stripe_test_api_key
+  webhook-secret: whsec_your_stripe_webhook_secret
