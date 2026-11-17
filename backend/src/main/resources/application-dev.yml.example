@@ -19,3 +19,4 @@ app:
 stripe:
   api-key: sk_test_your_stripe_test_api_key
   webhook-secret: whsec_your_stripe_webhook_secret
+

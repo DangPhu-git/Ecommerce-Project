@@ -21,3 +21,4 @@ describe('App Component', () => {
     expect(screen.getByText('Badges & Statuses')).toBeInTheDocument();
   });
 });
+
