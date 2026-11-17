@@ -10,9 +10,9 @@ spring:
       enabled: true
 
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ecommerce_dev}
-    username: ${SPRING_DATASOURCE_USERNAME:dev}
-    password: ${SPRING_DATASOURCE_PASSWORD:dev}
+    url: ${SPRING_DATASOURCE_URL:${DB_URL:jdbc:postgresql://localhost:5432/ecommerce_dev}}
+    username: ${SPRING_DATASOURCE_USERNAME:${DB_USER:dev}}
+    password: ${SPRING_DATASOURCE_PASSWORD:${DB_PASSWORD:dev}}
     hikari:
       pool-name: EcommerceHikariCP
       maximum-pool-size: ${DB_POOL_MAX:10}
