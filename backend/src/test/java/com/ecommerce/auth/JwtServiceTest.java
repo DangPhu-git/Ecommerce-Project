@@ -2,7 +2,7 @@ package com.ecommerce.auth;
 
 import com.ecommerce.auth.entity.Role;
 import com.ecommerce.auth.entity.User;
-import com.ecommerce.auth.service.JwtService;
+import com.ecommerce.auth.service.IJwtService;
 import com.ecommerce.auth.service.impl.JwtServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -20,7 +20,7 @@ class JwtServiceTest {
     private static final String TEST_SECRET = "super-secret-key-for-testing-purposes-must-be-at-least-32-bytes-long";
     private static final long TEST_EXPIRATION = 900; // 15 mins
 
-    private JwtService jwtService;
+    private IJwtService jwtService;
     private User testUser;
 
     @BeforeEach
@@ -78,7 +78,7 @@ class JwtServiceTest {
     @DisplayName("isTokenExpired should detect expired token")
     void isTokenExpired_ShouldReturnTrue_WhenTokenExpired() {
         // JwtService with -1 second expiration for immediate expiry
-        JwtService expiredJwtService = new JwtServiceImpl(TEST_SECRET, -10);
+        IJwtService expiredJwtService = new JwtServiceImpl(TEST_SECRET, -10);
         String expiredToken = expiredJwtService.generateAccessToken(testUser);
 
         assertThat(expiredJwtService.isTokenExpired(expiredToken)).isTrue();

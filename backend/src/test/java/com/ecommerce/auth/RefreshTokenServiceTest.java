@@ -5,7 +5,7 @@ import com.ecommerce.auth.entity.Role;
 import com.ecommerce.auth.entity.User;
 import com.ecommerce.auth.repository.RefreshTokenRepository;
 import com.ecommerce.auth.repository.UserRepository;
-import com.ecommerce.auth.service.RefreshTokenService;
+import com.ecommerce.auth.service.IRefreshTokenService;
 import com.ecommerce.auth.service.impl.RefreshTokenServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -34,7 +34,7 @@ class RefreshTokenServiceTest {
     @Mock
     private UserRepository userRepository;
 
-    private RefreshTokenService refreshTokenService;
+    private IRefreshTokenService refreshTokenService;
 
     private User testUser;
 

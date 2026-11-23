@@ -1,7 +1,7 @@
 package com.ecommerce.auth.service.impl;
 
 import com.ecommerce.auth.entity.User;
-import com.ecommerce.auth.service.JwtService;
+import com.ecommerce.auth.service.IJwtService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -27,7 +27,7 @@ import java.util.function.Function;
  */
 @Service
 @Slf4j
-public class JwtServiceImpl implements JwtService {
+public class JwtServiceImpl implements IJwtService {
 
     private final String secretKey;
     private final long jwtExpirationInSeconds;

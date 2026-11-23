@@ -8,7 +8,7 @@ import java.util.UUID;
 /**
  * Service contract for RefreshToken operations, rotation, and reuse detection.
  */
-public interface RefreshTokenService {
+public interface IRefreshTokenService {
 
     /**
      * Issues a new refresh token for a user by user ID.

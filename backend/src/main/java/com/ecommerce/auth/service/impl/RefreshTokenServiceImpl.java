@@ -4,7 +4,7 @@ import com.ecommerce.auth.entity.RefreshToken;
 import com.ecommerce.auth.entity.User;
 import com.ecommerce.auth.repository.RefreshTokenRepository;
 import com.ecommerce.auth.repository.UserRepository;
-import com.ecommerce.auth.service.RefreshTokenService;
+import com.ecommerce.auth.service.IRefreshTokenService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -27,7 +27,7 @@ import java.util.UUID;
  */
 @Service
 @Slf4j
-public class RefreshTokenServiceImpl implements RefreshTokenService {
+public class RefreshTokenServiceImpl implements IRefreshTokenService {
 
     private final RefreshTokenRepository refreshTokenRepository;
     private final UserRepository userRepository;

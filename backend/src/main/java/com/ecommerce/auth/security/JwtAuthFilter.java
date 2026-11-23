@@ -1,6 +1,6 @@
 package com.ecommerce.auth.security;
 
-import com.ecommerce.auth.service.JwtService;
+import com.ecommerce.auth.service.IJwtService;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -28,7 +28,7 @@ import java.io.IOException;
 @Slf4j
 public class JwtAuthFilter extends OncePerRequestFilter {
 
-    private final JwtService jwtService;
+    private final IJwtService jwtService;
     private final UserDetailsService userDetailsService;
 
     @Override

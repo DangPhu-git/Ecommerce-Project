@@ -9,7 +9,7 @@ import java.util.UUID;
 /**
  * Service contract for JWT generation, parsing, and claim extraction.
  */
-public interface JwtService {
+public interface IJwtService {
 
     /**
      * Generates a signed JWT access token for the given user with default expiration (15 minutes).

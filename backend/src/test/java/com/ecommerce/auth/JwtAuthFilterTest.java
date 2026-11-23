@@ -4,7 +4,7 @@ import com.ecommerce.auth.entity.Role;
 import com.ecommerce.auth.entity.User;
 import com.ecommerce.auth.security.JwtAuthFilter;
 import com.ecommerce.auth.security.JwtAuthenticationEntryPoint;
-import com.ecommerce.auth.service.JwtService;
+import com.ecommerce.auth.service.IJwtService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.ExpiredJwtException;
 import jakarta.servlet.FilterChain;
@@ -34,7 +34,7 @@ import static org.mockito.Mockito.*;
 class JwtAuthFilterTest {
 
     @Mock
-    private JwtService jwtService;
+    private IJwtService jwtService;
 
     @Mock
     private UserDetailsService userDetailsService;
