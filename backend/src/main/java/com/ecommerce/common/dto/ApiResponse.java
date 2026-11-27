@@ -53,6 +53,17 @@ public class ApiResponse<T> {
                 .build();
     }
 
+    public static <T> ApiResponse<T> error(String code, String message, java.util.List<String> details) {
+        return ApiResponse.<T>builder()
+                .success(false)
+                .error(ErrorResponse.builder()
+                        .code(code)
+                        .message(message)
+                        .details(details)
+                        .build())
+                .build();
+    }
+
     public static <T> ApiResponse<T> error(ErrorResponse error) {
         return ApiResponse.<T>builder()
                 .success(false)
